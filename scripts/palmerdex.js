@@ -1,18 +1,3 @@
-
-
-// api-key: E9CKeW2KIYsljTQtrZIYco4K0SHqCtq8zNMUfiAyCWbiX0aYQs secret-key: UcKewmRN8eTucsM3iEiT8LYSpey1ZpgVnBpjij9G7gORmF2kax
-/* var tumblr = require('tumblr.js');
-var client = tumblr.createClient({
-  consumer_key: 'E9CKeW2KIYsljTQtrZIYco4K0SHqCtq8zNMUfiAyCWbiX0aYQs',
-  consumer_secret: 'UcKewmRN8eTucsM3iEiT8LYSpey1ZpgVnBpjij9G7gORmF2kax',
-  token: 'ZH06ysHE7ZNSdsAR2koC8Btvv6QYUkGCwQJ1A0AuihaRCyQ2xj',
-  token_secret: '2DAZKtWpqUljDHEeuOnL1y5t7YuSjQVj3BQUnbvLrDZTSsWVMV'
-});
-
-client.blogPosts('drepalmz.tumblr.com', { type: 'photo' }, function (err, data) {
-    
-}); */ 
-
 $("#submit").on('click', () => {
   document.getElementById('icon2').src = '';
   document.getElementById('ab1').innerHTML = "";
@@ -21,11 +6,14 @@ $("#submit").on('click', () => {
   document.getElementById('pls').innerHTML = "";
   var w = document.getElementById('search').value;
   var x = w.toLowerCase();
-  document.getElementById('species').value = x;
-  var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + x + ".png";
+  var z = x.replace(' ', '');
+  document.getElementById('species').value = z;
+  var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + z + ".png";
   document.getElementById('display').src = url;
-  document.getElementById('species').innerHTML = x;
-  fetch("https://pokeapi.co/api/v2/pokemon/"+x)
+  document.getElementById('species').innerHTML = z;
+  console.log(z);
+  console.log(w);
+  fetch("https://pokeapi.co/api/v2/pokemon/"+z)
   .then(res => {
     return res.json();
   })
@@ -49,11 +37,11 @@ $("#submit").on('click', () => {
     }
 
   var primary = (data.abilities[0].ability.name).replace('-','')
-  var secondary = (data.abilities[1].ability.name).replace('-','')
   
   document.getElementById('primary').href = `https://www.serebii.net/abilitydex/${primary}.shtml`;
   
   if (data.abilities.length == 2) {
+    var secondary = (data.abilities[1].ability.name).replace('-','')
     document.getElementById('hidden').href = `https://www.serebii.net/abilitydex/${secondary}.shtml`;
   } else if (data.abilities.length == 3) {
     var h = (data.abilities[2].ability.name).replace('-','')
