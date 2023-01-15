@@ -20,11 +20,12 @@ $("#submit").on('click', () => {
   document.getElementById('ab3').innerHTML = "";
   document.getElementById('pls').innerHTML = "";
   var w = document.getElementById('search').value;
-  document.getElementById('species').value = w;
-  var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + w + ".png";
+  var x = w.toLowerCase();
+  document.getElementById('species').value = x;
+  var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + x + ".png";
   document.getElementById('display').src = url;
-  document.getElementById('species').innerHTML = w;
-  fetch("https://pokeapi.co/api/v2/pokemon/"+w)
+  document.getElementById('species').innerHTML = x;
+  fetch("https://pokeapi.co/api/v2/pokemon/"+x)
   .then(res => {
     return res.json();
   })
