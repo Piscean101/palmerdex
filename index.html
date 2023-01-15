@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="palmerdex.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+    </head>
+    <body>
+        <header>
+            <h2><span style="color: rgb(255, 0, 0)">palmer</span>dex</h2>
+            <nav class="nav_bar">
+            <ul>
+                <a href="#"><button>Coming Soon</button></a>
+                
+            </ul>
+            </nav>
+        </header>
+        <div id="midbody">
+            <h3 id="main">
+                <div class="content" id="content">
+                    <div id="species" class="description" style="font-size: 80px">Home</div>
+                    <img src="https://answers.unity.com/storage/temp/127850-building-transparent.png" class="content" id="display" width="80px" height="80px"/>
+                    <span id="icons">
+                        <img id="icon1" src=""/>
+                        <img src="" id="icon2"/>
+                    </span>
+                    <span style="font-size: 8px; color: rgb(78, 78, 78);" id="pls">Please search below</span>
+                </div>
+            </h3>
+            <div id="abilities">
+                <div class="ab"><a target="_blank" id="primary"><h5 id="ab1"></h5></a></div>
+
+                <div class="ab"><a target="_blank" id="secondary"><h5 id="ab2"></h5></a></div>
+
+                <div class="ab"><a target="_blank" id="hidden"><h5 id="ab3"></h5></a></div>
+            </div>
+        </div>
+        <div id="lowbody">
+            <form onsubmit="return false" id="form">
+            <input id="search" type="search" placeholder="Search By Name" required></input>
+            <button id="submit" type="submit" class="btn"><span id="srb">...Search</span></button>
+            </form>
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/palmerdex.js"></script>
+    </body>
+</html>
