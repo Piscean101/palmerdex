@@ -1,10 +1,9 @@
-$("#submit").on('click touchstart', () => {
+$("#submit").on('click touchend', () => {
   document.getElementById('icon2').src = '';
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
   document.getElementById('ab3').innerHTML = "";
   document.getElementById('pls').innerHTML = "";
-  document.getElementById('icon2').src = "";
   var w = document.getElementById('search').value;
   var x = w.toLowerCase();
   var z = x.replace(' ', '');
@@ -54,7 +53,7 @@ $("#submit").on('click touchstart', () => {
 })
 })
   // color change button
-$('#color').on('click touchstart', () => {
+$('#color').on('click touchend', () => {
   // body 
   if ($('#body').hasClass('color2')) {
     $('#body').removeClass('color2')

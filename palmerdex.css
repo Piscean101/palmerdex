@@ -124,3 +124,6 @@ h2, h3, h4 {
 #species {
     -webkit-text-stroke: 1px red;
 }
+.type {
+    border: none;
+}
