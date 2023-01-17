@@ -1,4 +1,4 @@
-$("#submit").on('click', () => {
+$("#submit").on('click touchstart', () => {
   document.getElementById('icon2').src = '';
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
@@ -54,7 +54,7 @@ $("#submit").on('click', () => {
 })
 })
   // color change button
-$('#color').on('click', () => {
+$('#color').on('click touchstart', () => {
   // body 
   if ($('#body').hasClass('color2')) {
     $('#body').removeClass('color2')
