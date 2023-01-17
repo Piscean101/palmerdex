@@ -1,7 +1,7 @@
   
   // search results
 
-$("#submit").off().on('click touchend', () => {
+$("#submit").off().on('mouseup touchend', () => {
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
   document.getElementById('ab3').innerHTML = "";
@@ -60,7 +60,7 @@ $("#submit").off().on('click touchend', () => {
 
   // color change button
 
-$('#color').off().on('click touchend', () => {
+$('#colorbtn').off().on('mouseup touchend', () => {
   // body 
   if ($('#body').hasClass('color2')) {
     $('#body').removeClass('color2')
