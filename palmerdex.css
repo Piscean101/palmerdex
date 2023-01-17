@@ -1,3 +1,6 @@
+
+/* Components */
+
 body { 
     display: flex;
     justify-content: center;
@@ -21,6 +24,9 @@ header * {
 }
 header h2 {
     padding-left: 10%;
+}
+h2, h3, h4 {
+    text-align: center;
 }
 .nav_bar * {
     position: relative;
@@ -48,9 +54,6 @@ header h2 {
     border: grey 2px solid;
     width: 90%;
 }
-h2, h3, h4 {
-    text-align: center;
-}
 #lowbody * {
     margin: 10px 5px;
 }
@@ -66,6 +69,9 @@ h2, h3, h4 {
     top: 10px;
     margin: 5px;
 }
+
+/* Links and Buttons */ 
+
 #type-wrap, #abilities {
     display: inline-flex;
 }
@@ -76,17 +82,14 @@ h2, h3, h4 {
     text-decoration: none;
     color: pink;
 }
-
 .ab a:hover {
     position: relative;
     bottom: 3px;
     cursor: pointer;
 }
-
 #ab3 {
     color: gold;
 }
-
 #lowbody button {
     border-radius: 20px;
     border: solid 3px grey;
@@ -96,20 +99,6 @@ h2, h3, h4 {
 #srb {
     padding: 15px;
     line-height: 1.5;
-}
-.color2 {
-    background-color: rgb(199, 128, 85);
-    color: rgb(105, 0, 0);
-}
-.color3 {
-    background-color: rgb(66, 18, 160);
-    color: rgb(212, 28, 206);
-}
-.colorb {
-    background-color: brown;
-}
-.colorc {
-    background-color: rgb(15, 0, 128);
 }
 #colorbtn {
     width: 35px;
@@ -124,6 +113,23 @@ h2, h3, h4 {
 #species {
     -webkit-text-stroke: 1px red;
 }
-.type {
-    border: none;
+.noborder {
+    display: none;
+}
+
+/* Additional Color Palettes */
+
+.color2 {
+    background-color: rgb(199, 128, 85);
+    color: rgb(105, 0, 0);
+}
+.color3 {
+    background-color: rgb(66, 18, 160);
+    color: rgb(212, 28, 206);
+}
+.colorb {
+    background-color: brown;
+}
+.colorc {
+    background-color: rgb(15, 0, 128);
 }

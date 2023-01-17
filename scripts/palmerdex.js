@@ -1,9 +1,12 @@
-$("#submit").on('click touchend', () => {
-  document.getElementById('icon2').src = '';
+  
+  // search results
+
+$("#submit").off().on('click touchend', () => {
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
   document.getElementById('ab3').innerHTML = "";
   document.getElementById('pls').innerHTML = "";
+  document.getElementById('icon2').src = "";
   var w = document.getElementById('search').value;
   var x = w.toLowerCase();
   var z = x.replace(' ', '');
@@ -18,9 +21,11 @@ $("#submit").on('click touchend', () => {
   .then(data => {
     // typing 
     one = (data.types[0].type.name);
+    $('#icon2').addClass('noborder');
     document.getElementById('icon1').src = "https://www.serebii.net/pokedex-bw/type/"+one+".gif";
     if (data.types.length > 1) {
-      two = (data.types[1].type.name)
+      $('#icon2').removeClass('noborder');
+      two = (data.types[1].type.name);
       document.getElementById('icon2').src = "https://www.serebii.net/pokedex-bw/type/"+two+".gif";
     }
     // abilities
@@ -52,8 +57,10 @@ $("#submit").on('click touchend', () => {
   document.getElementById('ab2').innerHTML = `Please be serious`;
 })
 })
+
   // color change button
-$('#color').on('click touchend', () => {
+
+$('#color').off().on('click touchend', () => {
   // body 
   if ($('#body').hasClass('color2')) {
     $('#body').removeClass('color2')
