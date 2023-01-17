@@ -4,6 +4,7 @@ $("#submit").on('click', () => {
   document.getElementById('ab2').innerHTML = "";
   document.getElementById('ab3').innerHTML = "";
   document.getElementById('pls').innerHTML = "";
+  document.getElementById('icon2').src = "";
   var w = document.getElementById('search').value;
   var x = w.toLowerCase();
   var z = x.replace(' ', '');
@@ -11,8 +12,6 @@ $("#submit").on('click', () => {
   var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + z + ".png";
   document.getElementById('display').src = url;
   document.getElementById('species').innerHTML = z;
-  console.log(z);
-  console.log(w);
   fetch("https://pokeapi.co/api/v2/pokemon/"+z)
   .then(res => {
     return res.json();
@@ -49,8 +48,38 @@ $("#submit").on('click', () => {
     document.getElementById('hidden').href = `https://www.serebii.net/abilitydex/${h}.shtml`
   } 
 }).catch(() => {
-  document.getElementById('display').src = "https://hotemoji.com/images/dl/1/question-mark-emoji-by-twitter.png";
+  document.getElementById('display').src = "images/error.png";
   document.getElementById('primary').href = ``;
   document.getElementById('ab2').innerHTML = `Please be serious`;
 })
+})
+  // color change button
+$('#color').on('click', () => {
+  // body 
+  if ($('#body').hasClass('color2')) {
+    $('#body').removeClass('color2')
+    $('#body').addClass('color3')
+  } else if ($('#body').hasClass('color3')) { 
+    $('#body').removeClass('color3')
+ } else {
+    $('#body').addClass('color2')
+ }
+ // header
+  if ($('#header').hasClass('colorb')) {
+    $('#header').removeClass('colorb')
+    $('#header').addClass('colorc')
+  } else if ($('#header').hasClass('colorc')) {
+    $('#header').removeClass('colorc') 
+  } else {
+    $('#header').addClass('colorb')
+  }
+  // search bar
+  if ($('#lowbody').hasClass('colorx')) {
+    $('#lowbody').removeClass('colorx')
+    $('#lowbody').addClass('colory')
+  } else if ($('#lowbody').hasClass('colory')) {
+    $('#lowbody').removeClass('colory') 
+  } else {
+    $('#lowbody').addClass('colorx')
+  }
 })
