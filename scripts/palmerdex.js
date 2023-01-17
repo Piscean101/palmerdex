@@ -1,7 +1,7 @@
   
   // search results
 
-$("#submit").off().on('mouseup touchend', () => {
+$("#submit").off().on('mouseup tap', () => {
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
   document.getElementById('ab3').innerHTML = "";
@@ -60,8 +60,9 @@ $("#submit").off().on('mouseup touchend', () => {
 
   // color change button
 
-$('#colorbtn').off().on('mouseup touchend', () => {
+$('#color').on('mouseup tap', (e) => {
   // body 
+  e.preventDefault();
   if ($('#body').hasClass('color2')) {
     $('#body').removeClass('color2')
     $('#body').addClass('color3')
