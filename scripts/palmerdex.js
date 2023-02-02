@@ -1,6 +1,5 @@
-  
-  // search results
 
+  // search results
 $("#submit").off().on('mouseup tap', () => {
   document.getElementById('ab1').innerHTML = "";
   document.getElementById('ab2').innerHTML = "";
@@ -19,6 +18,8 @@ $("#submit").off().on('mouseup tap', () => {
     return res.json();
   })
   .then(data => {
+    document.getElementById('dexnum').innerHTML = `#${data.id}`;
+    document.getElementById('serebii').href = `https://www.serebii.net/pokemon/${data.name}/`
     // typing 
     one = (data.types[0].type.name);
     $('#icon2').addClass('noborder');
@@ -68,8 +69,11 @@ $('#color').on('mouseup tap', (e) => {
     $('#body').addClass('color3')
   } else if ($('#body').hasClass('color3')) { 
     $('#body').removeClass('color3')
+    $('#body').addClass('color4')
+ } else if ($('#body').hasClass('color4')){
+    $('#body').removeClass('color4')
  } else {
-    $('#body').addClass('color2')
+  $('#body').addClass('color2')
  }
  // header
   if ($('#header').hasClass('colorb')) {
@@ -77,16 +81,18 @@ $('#color').on('mouseup tap', (e) => {
     $('#header').addClass('colorc')
   } else if ($('#header').hasClass('colorc')) {
     $('#header').removeClass('colorc') 
+    $('#header').addClass('colord')
+  } else if ($('#header').hasClass('colord')){
+    $('#header').removeClass('colord')
   } else {
     $('#header').addClass('colorb')
-  }
-  // search bar
-  if ($('#lowbody').hasClass('colorx')) {
-    $('#lowbody').removeClass('colorx')
-    $('#lowbody').addClass('colory')
-  } else if ($('#lowbody').hasClass('colory')) {
-    $('#lowbody').removeClass('colory') 
-  } else {
-    $('#lowbody').addClass('colorx')
-  }
-})
+ } })
+
+
+ // info button
+
+  $('#infobtn').on('mouseup tap', () => {
+/*let search = document.getElementById('dexnum').innerHTML;
+  let s = search.replace('#',''); */
+  alert('After searching, Tap on a Pokemon\'s number (#) OR abilities')
+ }) 

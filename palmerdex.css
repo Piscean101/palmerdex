@@ -1,5 +1,9 @@
 
 /* Components */
+#serebii {
+    text-decoration: none;
+    color: red;
+}
 
 body { 
     display: flex;
@@ -110,6 +114,16 @@ h2, h3, h4 {
 #colorbtn:hover {
     cursor: pointer; 
 }
+#infobtn {
+    width: 35px;
+    background-color: rgb(68, 68, 68);
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+}
+#info:hover {
+    cursor: pointer;
+}
 #species {
     -webkit-text-stroke: 1px red;
 }
@@ -120,16 +134,23 @@ h2, h3, h4 {
 /* Additional Color Palettes */
 
 .color2 {
-    background-color: rgb(199, 128, 85);
-    color: rgb(105, 0, 0);
+    background-color: rgb(181, 105, 58);
+    color: rgb(174, 0, 0);
 }
 .color3 {
     background-color: rgb(66, 18, 160);
     color: rgb(212, 28, 206);
 }
+.color4 {
+    background-color: rgb(5, 0, 102);
+    color: rgb(0, 202, 114);
+}
 .colorb {
-    background-color: brown;
+    background-color: rgb(112, 27, 27);
 }
 .colorc {
     background-color: rgb(15, 0, 128);
+}
+.colord {
+    background-color: rgb(17, 65, 107);
 }
