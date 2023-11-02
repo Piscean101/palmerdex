@@ -40,12 +40,13 @@ $("#submit").off().on('mouseup tap', () => {
       document.getElementById('ab3').innerHTML = (data.abilities[2].ability.name)
     }
 
-  var primary = (data.abilities[0].ability.name).replace('-','')
+  var primary = (data.abilities[0].ability.name).replace('-','');
+  var secondary = (data.abilities[1].ability.name).replace('-','');
   
   document.getElementById('primary').href = `https://www.serebii.net/abilitydex/${primary}.shtml`;
   
   if (data.abilities.length == 2) {
-    var secondary = (data.abilities[1].ability.name).replace('-','')
+    // var secondary = (data.abilities[1].ability.name).replace('-','')
     document.getElementById('hidden').href = `https://www.serebii.net/abilitydex/${secondary}.shtml`;
   } else if (data.abilities.length == 3) {
     var h = (data.abilities[2].ability.name).replace('-','')
@@ -57,7 +58,7 @@ $("#submit").off().on('mouseup tap', () => {
   document.getElementById('primary').href = ``;
   document.getElementById('ab2').innerHTML = `Please be serious`;
 })
-})
+});
 
   // color change button
 
@@ -86,7 +87,7 @@ $('#color').on('mouseup tap', (e) => {
     $('#header').removeClass('colord')
   } else {
     $('#header').addClass('colorb')
- } })
+ } });
 
 
  // info button
@@ -94,5 +95,5 @@ $('#color').on('mouseup tap', (e) => {
   $('#infobtn').on('mouseup tap', () => {
 /*let search = document.getElementById('dexnum').innerHTML;
   let s = search.replace('#',''); */
-  alert('After searching, Tap on a Pokemon\'s number (#) OR abilities')
- }) 
+  alert('Search for a Pokemon by name,  then Tap on a Pokemon\'s number (#) OR abilities to learn more')
+ }); 
