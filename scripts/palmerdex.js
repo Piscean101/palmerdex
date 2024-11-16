@@ -55,7 +55,7 @@ $("#submit").off().on('mouseup tap', () => {
 }).catch(() => {
   document.getElementById('display').src = "images/error.png";
   document.getElementById('primary').href = ``;
-  document.getElementById('ab2').innerHTML = `Please be serious`;
+  document.getElementById('ab2').innerHTML = `Please Try Again`;
 })
 })
 

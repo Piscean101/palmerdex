@@ -111,9 +111,6 @@ h2, h3, h4 {
     border-radius: 50%;
     padding: 5px;
 }
-#colorbtn:hover {
-    cursor: pointer; 
-}
 #infobtn {
     width: 35px;
     background-color: rgb(68, 68, 68);
@@ -121,7 +118,7 @@ h2, h3, h4 {
     border-radius: 50%;
     padding: 5px;
 }
-#info:hover {
+#info:hover, #srb:hover, #colorbtn:hover {
     cursor: pointer;
 }
 #species {
