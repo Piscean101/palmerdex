@@ -96,5 +96,5 @@ $('#color').on('mouseup tap', (e) => {
   $('#infobtn').on('mouseup tap', () => {
 /*let search = document.getElementById('dexnum').innerHTML;
   let s = search.replace('#',''); */
-  alert('Search for a Pokemon by name,  then you can click on a Pokemon\'s number (#) or abilities to learn more -- This will take you to a safe external site where you can also find information on alternate forms (eg. Megas, Primals etc.)')
+  alert('Search for a Pokemon by name,  then you can click on a Pokemon\'s number (#) or abilities to learn more -- This will take you to a safe external site where you can also find information on alternate forms (eg. Megas, Primals etc.) \n\n ~~ Known Issue: some species\' sprites are not loading properly')
  }); 
