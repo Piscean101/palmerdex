@@ -8,9 +8,9 @@ $("#submit").off().on('mouseup tap', () => {
   document.getElementById('icon2').src = "";
   var w = document.getElementById('search').value;
   var x = w.toLowerCase();
-  var z = x.replace(' ', '');
+  var z = x.replace(' ','').replace('-unbound','').replace('-mega','').replace('-primal','').replace('-crowned','');
   document.getElementById('species').value = z;
-  var url = "https://img.pokemondb.net/sprites/sword-shield/icon/" + z + ".png";
+  var url = "https://img.pokemondb.net/sprites/scarlet-violet/normal/" + z + ".png";
   document.getElementById('display').src = url;
   document.getElementById('species').innerHTML = z;
   fetch("https://pokeapi.co/api/v2/pokemon/"+z)
@@ -41,11 +41,11 @@ $("#submit").off().on('mouseup tap', () => {
     }
 
   var primary = (data.abilities[0].ability.name).replace('-','');
-  var secondary = (data.abilities[1].ability.name).replace('-','');
+  var secondary = data.abilities[1] ? (data.abilities[1].ability.name).replace('-','') : null;
   
   document.getElementById('primary').href = `https://www.serebii.net/abilitydex/${primary}.shtml`;
   
-  if (data.abilities.length == 2) {
+  if (data.abilities.length <= 2) {
     // var secondary = (data.abilities[1].ability.name).replace('-','')
     document.getElementById('hidden').href = `https://www.serebii.net/abilitydex/${secondary}.shtml`;
   } else if (data.abilities.length == 3) {
@@ -53,7 +53,8 @@ $("#submit").off().on('mouseup tap', () => {
     document.getElementById('secondary').href = `https://www.serebii.net/abilitydex/${secondary}.shtml`
     document.getElementById('hidden').href = `https://www.serebii.net/abilitydex/${h}.shtml`
   } 
-}).catch(() => {
+}).catch((e) => {
+  console.log(e)
   document.getElementById('display').src = "images/error.png";
   document.getElementById('primary').href = ``;
   document.getElementById('ab2').innerHTML = `Please Try Again`;
@@ -95,5 +96,5 @@ $('#color').on('mouseup tap', (e) => {
   $('#infobtn').on('mouseup tap', () => {
 /*let search = document.getElementById('dexnum').innerHTML;
   let s = search.replace('#',''); */
-  alert('Search for a Pokemon by name,  then Tap on a Pokemon\'s number (#) OR abilities to learn more')
+  alert('Search for a Pokemon by name,  then you can click on a Pokemon\'s number (#) or abilities to learn more -- This will take you to a safe external site where you can also find information on alternate forms (eg. Megas, Primals etc.)')
  }); 
